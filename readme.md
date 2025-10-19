@@ -163,3 +163,12 @@ curl -X PUT \
   }
 }
 ```
+## Kasus Uji Minimal (Checklist)
+
+* [:white_check_mark:] Login sukses mengembalikan `access_token` valid (de-code JWT cek `sub`, `email`, `exp`).
+* [:white_check_mark:] `/items` dapat diakses tanpa header Authorization.
+* [:white_check_mark:] `/profile` menolak akses tanpa/invalid/expired token (**401**).
+* [:white_check_mark:] `/profile` berhasil update profil milik user sesuai klaim token (**200**).
+* [:white_check_mark:] Semua respons berbentuk JSON, status code tepat, error message jelas.
+* [:white_check_mark:] Secret tidak hardcode di kode (gunakan `.env`).
+* [:white_check_mark:] README berisi perintah run & contoh cURL/Postman.
